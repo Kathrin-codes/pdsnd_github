@@ -4,7 +4,7 @@
 This project was created in connection with the nanodegree "Programming for Data Science" in March 2022.
 
 ### Project Title
-Replace the Project Title
+Interactive analysis of bikeshare data in three different cities
 
 ### Description
 Describe what your project is about and what it does
