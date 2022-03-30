@@ -19,4 +19,4 @@ Besides the python file, the csv files have been hidden using .gitignore.
 These csv files include bikeshare data from the three different cities.
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+Thanks to Udacity and team!
