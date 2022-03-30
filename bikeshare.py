@@ -150,8 +150,7 @@ def trip_duration_stats(df):
     # Display total travel time in days, hours and minutes; neglects seconds
     total_travel_secs = df['Trip Duration'].sum()
     days = total_travel_secs // (60*60*24)
-    hours_rest = total_travel_secs - (days*60*60*24)
-    hours = hours_rest // (60*60)
+    hours = (total_travel_secs - (days*60*60*24)) // (60*60)
     minutes_rest = total_travel_secs - (days*60*60*24) - (hours*60*60)
     minutes = minutes_rest // 60
     print('Total travel time wasm approx. {} days, {} hours and {} minutes and (probably a few seconds)'.format(days, hours, minutes))
