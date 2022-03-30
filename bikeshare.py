@@ -6,6 +6,8 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 
+MONTHS_GLOBAL = ['january', 'february', 'march', 'april', 'may', 'june']
+
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
@@ -71,8 +73,7 @@ def load_data(city, month, day):
     # filter by month if applicable
     if month != 'all':
         # use the index of the months list to get the corresponding int
-        months = ['january', 'february', 'march', 'april', 'may', 'june']
-        month = months.index(month) + 1
+        month = MONTHS_GLOBAL.index(month) + 1
 
         # filter by month to create the new dataframe
         df = df[df['month']==month]
@@ -94,8 +95,7 @@ def time_stats(df, month, day):
     df['Start Time'] = pd.to_datetime(df['Start Time'])
 
     # Display the most common month only if not filtered by month
-    months = ['january', 'febuary', 'march', 'april', 'may', 'june']
-    if month not in months:
+    if month not in MONTHS_GLOBAL:
         popular_month = df['month'].mode()[0]
         print('The most popular month was: {}'.format(popular_month))
 
@@ -150,8 +150,7 @@ def trip_duration_stats(df):
     # Display total travel time in days, hours and minutes; neglects seconds
     total_travel_secs = df['Trip Duration'].sum()
     days = total_travel_secs // (60*60*24)
-    hours_rest = total_travel_secs - (days*60*60*24)
-    hours = hours_rest // (60*60)
+    hours = (total_travel_secs - (days*60*60*24)) // (60*60)
     minutes_rest = total_travel_secs - (days*60*60*24) - (hours*60*60)
     minutes = minutes_rest // 60
     print('Total travel time wasm approx. {} days, {} hours and {} minutes and (probably a few seconds)'.format(days, hours, minutes))
