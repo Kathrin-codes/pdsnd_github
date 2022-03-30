@@ -12,10 +12,11 @@ An interactive approach guides the user through the following steps:
 - Choose which city to look at
 - Filter the data by month or day
 - Provide statistical data for the specified city and time filter
-- Choose whether or not to see detailed data 
+- Choose whether or not to see detailed data
 
 ### Files used
-Include the files used
+Besides the python file, the csv files have been hidden using .gitignore.
+These csv files include bikeshare data from the three different cities.
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
